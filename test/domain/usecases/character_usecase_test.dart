@@ -89,7 +89,7 @@ void main() {
 
         expect(result.isLeft(), true);
         expect(result.isRight(), false);
-        expect(result, Left<Failure, CharacterEntity>(ServerFailure()));
+        expect(result, Left<Failure, List<CharacterEntity>>(ServerFailure()));
         verify(mockCharacterRepoImpl.getCharacters()).called(1);
         verifyNoMoreInteractions(mockCharacterRepoImpl);
 
@@ -109,7 +109,7 @@ void main() {
 
         expect(result.isLeft(), true);
         expect(result.isRight(), false);
-        expect(result, Left<Failure, CharacterEntity>(UnauthorizedFailure()));
+        expect(result, Left<Failure, List<CharacterEntity>>(UnauthorizedFailure()));
         verify(mockCharacterRepoImpl.getCharacters()).called(1);
         verifyNoMoreInteractions(mockCharacterRepoImpl);
 
@@ -129,7 +129,7 @@ void main() {
 
         expect(result.isLeft(), true);
         expect(result.isRight(), false);
-        expect(result, Left<Failure, CharacterEntity>(MissParamsFailure()));
+        expect(result, Left<Failure, List<CharacterEntity>>(MissParamsFailure()));
         verify(mockCharacterRepoImpl.getCharacters()).called(1);
         verifyNoMoreInteractions(mockCharacterRepoImpl);
 
@@ -149,7 +149,7 @@ void main() {
 
         expect(result.isLeft(), true);
         expect(result.isRight(), false);
-        expect(result, Left<Failure, CharacterEntity>(GeneralFailure()));
+        expect(result, Left<Failure, List<CharacterEntity>>(GeneralFailure()));
         verify(mockCharacterRepoImpl.getCharacters()).called(1);
         verifyNoMoreInteractions(mockCharacterRepoImpl);
 
