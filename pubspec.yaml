@@ -3,7 +3,7 @@ description: A project to a job opportunity of mobile developer with Flutter
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+14
+version: 1.0.0+15
 
 environment:
   sdk: '>=3.1.1 <4.0.0'
@@ -64,6 +64,7 @@ flutter:
     - assets/
     - assets/img/
     - assets/languages/
+    - assets/test/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
