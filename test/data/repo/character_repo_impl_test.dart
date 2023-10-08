@@ -5,7 +5,6 @@ import 'dart:io';
 import 'character_repo_impl_test.mocks.dart';
 
 // import dos domain
-import 'package:teste_softdesign/data/exceptions/exceptions.dart';
 import 'package:teste_softdesign/domain/entities/character.dart';
 import 'package:teste_softdesign/domain/failures/failure.dart';
 
@@ -13,6 +12,7 @@ import 'package:teste_softdesign/domain/failures/failure.dart';
 import 'package:teste_softdesign/data/datasource/character_remote_datasource.dart';
 import 'package:teste_softdesign/data/repositories/character_repo_impl.dart';
 import 'package:teste_softdesign/data/models/character_model.dart';
+import 'package:teste_softdesign/data/exceptions/exceptions.dart';
 
 // import dos pacotes
 import 'package:mockito/annotations.dart';
