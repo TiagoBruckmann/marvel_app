@@ -31,9 +31,7 @@ class _CharactersPageState extends State<CharactersPage> {
     _charactersMobx = Provider.of<CharactersMobx>(context);
 
     _charactersMobx.scrollController.addListener(() {
-      if ( _charactersMobx.scrollController.position.maxScrollExtent == _charactersMobx.scrollController.position.pixels ) {
-        _charactersMobx.loadMore();
-      }
+      _charactersMobx.loadMore();
     });
 
     await _charactersMobx.getCharacters();
