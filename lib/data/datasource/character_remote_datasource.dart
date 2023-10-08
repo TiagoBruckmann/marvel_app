@@ -26,13 +26,13 @@ class CharactersRemoteDatasourceImpl implements CharactersRemoteDatasource {
   CharactersRemoteDatasourceImpl( this.client );
 
   @override
-  Future<List<CharacterModel>> getCharacters() async {
+  Future<List<CharacterModel>> getCharacters({ String? timeStamp }) async {
 
     Map<String, String> header = {
       "content-Type": "application/json",
     };
 
-    final timeStamp = DateTime.now().toString().replaceAll("-", "").replaceAll(" ", "").replaceAll(":", "").replaceAll(".", "");
+    timeStamp = timeStamp ?? DateTime.now().toString().replaceAll("-", "").replaceAll(" ", "").replaceAll(":", "").replaceAll(".", "");
     final hashParse = "$timeStamp${Session.credentials.privateApiKey}${Session.credentials.publicApiKey}";
     final hashApi = md5.convert(utf8.encode(hashParse)).toString();
 
@@ -51,19 +51,18 @@ class CharactersRemoteDatasourceImpl implements CharactersRemoteDatasource {
       headers: header,
     );
 
-    final List<CharacterModel> list = [];
-
     switch ( response.statusCode ) {
       case 200:
         final responseBody = jsonDecode(response.body);
         setPagination(responseBody["data"]);
 
+        List<CharacterModel> list = [];
         for ( final item in responseBody["data"]["results"] )  {
           list.add(
             CharacterModel.fromJson(item),
           );
         }
-      break;
+        return list;
 
       case 401:
         throw UnauthorizedExceptions();
@@ -77,8 +76,6 @@ class CharactersRemoteDatasourceImpl implements CharactersRemoteDatasource {
       default:
         throw GeneralExceptions();
     }
-
-    return list;
   }
 
 }
