@@ -51,10 +51,12 @@ class MockCharactersRemoteDatasourceImpl extends _i1.Mock
       ) as _i2.Client);
 
   @override
-  _i4.Future<List<_i5.CharacterModel>> getCharacters() => (super.noSuchMethod(
+  _i4.Future<List<_i5.CharacterModel>> getCharacters({String? timeStamp}) =>
+      (super.noSuchMethod(
         Invocation.method(
           #getCharacters,
           [],
+          {#timeStamp: timeStamp},
         ),
         returnValue:
             _i4.Future<List<_i5.CharacterModel>>.value(<_i5.CharacterModel>[]),
