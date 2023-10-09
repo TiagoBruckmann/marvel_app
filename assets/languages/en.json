@@ -1,0 +1,20 @@
+{
+  "app_name": "Teste Softdesign",
+  "pages": {
+    "character": {
+      "app_bar": "Characters",
+      "comic": "Comics",
+      "empty": {
+        "list": "No characters found! Please try again!",
+        "data": "This character hasn't a description and a comic list!"
+      }
+    }
+  },
+  "routes": {
+    "app_bar": "Page not found!",
+    "body": "Page not found! Go back and try again!"
+  },
+  "connection": {
+    "title": "Without access to ethernet, reconnect!"
+  }
+}
